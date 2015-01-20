@@ -90,5 +90,14 @@ describe('Thermostat', function(){
       expect(thermostat.consoleColor()).toEqual("yellow");
     });
 
+    it('should be green when temperature is below 18', function(){
+      thermostat.decreaseTemperature(5);
+      expect(thermostat.consoleColor()).toEqual("green");
+    });
+
+    it('should be red when temperature is above 25', function(){
+      thermostat.increaseTemperature(10);
+      expect(thermostat.consoleColor()).toEqual("red");
+    });
   });
 });

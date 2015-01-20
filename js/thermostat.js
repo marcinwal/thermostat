@@ -5,23 +5,26 @@ var Thermostat = function(){
 };
 
 Thermostat.prototype.increaseTemperature = function(changeTempBy) {
-  var temp = this.temperature + changeTempBy
+  var currentTemp = this.temperature + changeTempBy;
+  var powerSaveMax = 25;
+  var regularMax = 32;
   if (this.savingMode)
   {
-     this.temperature = Math.min(temp,25);
+     this.temperature = Math.min(currentTemp,powerSaveMax);
   } else
   {
-    this.temperature = Math.min(temp,32);
+    this.temperature = Math.min(currentTemp,regularMax);
   }
 };
 
 Thermostat.prototype.decreaseTemperature = function(changeTempBy) {
-  var temp = this.temperature - changeTempBy
-    this.temperature = Math.max(temp,10);
+  var currentTemp = this.temperature - changeTempBy;
+  var minTemp = 10;
+  this.temperature = Math.max(currentTemp,minTemp);
 };
 
 Thermostat.prototype.changeSaveMode = function(){
-  this.savingMode = !this.savingMode
+  this.savingMode = !this.savingMode;
 };
 
 Thermostat.prototype.reset = function() {
@@ -30,7 +33,9 @@ Thermostat.prototype.reset = function() {
 };
 
 Thermostat.prototype.consoleColor = function() {
-  if (this.temperature < 18) return 'green';
-  if (this.temperature < 25) return 'yellow';
+  var greenTrigger = 18;
+  var yellowTrigger = 25;
+  if (this.temperature < greenTrigger) return 'green';
+  if (this.temperature < yellowTrigger) return 'yellow';
   return 'red';
 };
