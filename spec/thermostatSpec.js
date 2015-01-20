@@ -53,4 +53,19 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(10);
     });
   });
+
+  describe('it has saving power on/off button',function(){
+    it('can switch saving mode to off',function(){
+      expect(thermostat.savingMode).toBe(true);
+      thermostat.changeSaveMode();
+      expect(thermostat.savingMode).toBe(false);
+    });
+
+    it('can switch saving mode to on',function(){
+      thermostat.changeSaveMode();
+      expect(thermostat.savingMode).toBe(false);
+      thermostat.changeSaveMode();
+      expect(thermostat.savingMode).toBe(true);
+    });
+  });
 });

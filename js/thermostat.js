@@ -19,3 +19,7 @@ Thermostat.prototype.decreaseTemperature = function(changeTempBy) {
   var temp = this.temperature - changeTempBy
     this.temperature = Math.max(temp,10);
 };
+
+Thermostat.prototype.changeSaveMode = function(){
+  this.savingMode = !this.savingMode
+};
