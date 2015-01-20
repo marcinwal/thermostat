@@ -68,4 +68,19 @@ describe('Thermostat', function(){
       expect(thermostat.savingMode).toBe(true);
     });
   });
+
+  describe('it has a reset button', function(){
+
+    it('it should change temperature to 20', function(){
+      thermostat.increaseTemperature(10);
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
+    });
+
+    it('it should change to power save mode', function(){
+      thermostat.changeSaveMode();
+      thermostat.reset();
+      expect(thermostat.savingMode).toBe(true);
+    });
+  });
 });

@@ -23,3 +23,8 @@ Thermostat.prototype.decreaseTemperature = function(changeTempBy) {
 Thermostat.prototype.changeSaveMode = function(){
   this.savingMode = !this.savingMode
 };
+
+Thermostat.prototype.reset = function() {
+  this.temperature = 20;
+  this.savingMode = true;
+};
