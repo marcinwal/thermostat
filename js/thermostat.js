@@ -14,3 +14,8 @@ Thermostat.prototype.increaseTemperature = function(changeTempBy) {
     this.temperature = Math.min(temp,32);
   }
 };
+
+Thermostat.prototype.decreaseTemperature = function(changeTempBy) {
+  var temp = this.temperature - changeTempBy
+    this.temperature = Math.max(temp,10);
+};
