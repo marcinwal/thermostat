@@ -28,3 +28,9 @@ Thermostat.prototype.reset = function() {
   this.temperature = 20;
   this.savingMode = true;
 };
+
+Thermostat.prototype.consoleColor = function() {
+  if (this.temperature < 18) return 'green';
+  if (this.temperature < 25) return 'yellow';
+  return 'red';
+};

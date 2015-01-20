@@ -83,4 +83,12 @@ describe('Thermostat', function(){
       expect(thermostat.savingMode).toBe(true);
     });
   });
+
+  describe('it can provide us with color',function(){
+
+    it('should be yellow when it starts',function(){
+      expect(thermostat.consoleColor()).toEqual("yellow");
+    });
+
+  });
 });
