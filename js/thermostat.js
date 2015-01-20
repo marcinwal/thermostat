@@ -1,6 +1,7 @@
 var Thermostat = function(){
   this.temperature = 20;
   this.savingMode = true;
+  this.step = 2; 
 
 };
 
@@ -38,4 +39,12 @@ Thermostat.prototype.consoleColor = function() {
   if (this.temperature < greenTrigger) return 'green';
   if (this.temperature < yellowTrigger) return 'yellow';
   return 'red';
+};
+
+Thermostat.prototype.up = function() {
+  this.increaseTemperature(this.step);
+};
+
+Thermostat.prototype.down = function() {
+  this.decreaseTemperature(this.step);
 };

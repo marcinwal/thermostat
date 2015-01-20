@@ -100,4 +100,17 @@ describe('Thermostat', function(){
       expect(thermostat.consoleColor()).toEqual("red");
     });
   });
+
+  describe('two buttons logic for thermostat',function(){
+    it('can increase in steps',function(){
+      thermostat.up();
+      expect(thermostat.temperature).toEqual(22);
+    });
+
+    it('can decrease in steps',function(){
+      thermostat.down();
+      expect(thermostat.temperature).toEqual(18);
+    });
+
+  });
 });
