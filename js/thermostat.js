@@ -21,10 +21,6 @@ Thermostat.prototype.changeSaveMode = function(){
   this.savingMode = !this.savingMode;
 };
 
-Thermostat.prototype.changeSaveMode = function(){
-  this.savingMode = !this.savingMode;
-};
-
 Thermostat.prototype.consoleColor = function() {
   var greenTrigger = 18;
   var yellowTrigger = 25;
