@@ -1,7 +1,7 @@
 var Thermostat = function(){
   this.temperature = 20;
   this.savingMode = true;
-  this.step = 2; 
+  this.defaultTempChange = 2; 
   this.minTemp = 10;
   this.powerSaveMax = 25;
   this.regularMax = 32;
@@ -9,11 +9,11 @@ var Thermostat = function(){
 };
 
 Thermostat.prototype.up = function() {
-  this._increaseTemperature(this.step);
+  this._increaseTemperature(this.defaultTempChange);
 };
 
 Thermostat.prototype.down = function() {
-  this._decreaseTemperature(this.step);
+  this._decreaseTemperature(this.defaultTempChange);
 };
 
 Thermostat.prototype.reset = function() {
