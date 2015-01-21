@@ -1,7 +1,7 @@
 var Thermostat = function(){
   this.temperature = 20;
   this.savingMode = true;
-  this.defaultTempChange = 2; 
+  this.defaultTempChange = 1; 
   this.minTemp = 10;
   this.powerSaveMax = 25;
   this.regularMax = 32;
