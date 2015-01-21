@@ -42,6 +42,12 @@ describe('Thermostat', function(){
       thermostat._increaseTemperature(26);
       expect(thermostat.temperature).toBeLessThan(26);
     });
+
+    it('should change temperature to 25 if switched to power saving mode and temp is high enough',function(){
+        thermostat._increaseTemperature(8);
+        thermostat.changeSaveMode();
+        expect(thermostat.temperature).toEqual(25);
+      });
   });
 
   describe('it has a minimum temperature', function(){
