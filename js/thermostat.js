@@ -2,7 +2,6 @@ var Thermostat = function(){
   this.temperature = 20;
   this.savingMode = true;
   this.step = 2; 
-
 };
 
 Thermostat.prototype.up = function() {

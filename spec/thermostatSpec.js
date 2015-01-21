@@ -15,8 +15,6 @@ describe('Thermostat', function(){
     it('starts in power saving mode', function(){
       expect(thermostat.savingMode).toBe(true)
     });
-
-
   });
 
   describe('changing temperature', function(){
@@ -26,7 +24,7 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(21);
     });
 
-     it('can decrease the temperature', function(){
+     it('can decrease', function(){
       thermostat._decreaseTemperature(1);
       expect(thermostat.temperature).toEqual(19);
     });
@@ -34,13 +32,13 @@ describe('Thermostat', function(){
 
   describe('has maximum temperature', function(){
 
-    it('it cannot increase above 32',function(){
+    it('in regular mode it cannot increase above 32',function(){
       thermostat.savingMode = false;
       thermostat._increaseTemperature(15);
       expect(thermostat.temperature).toBeLessThan(33);
     });
 
-    it('in power saving mode cannot increase above 25 in power saving',function(){
+    it('in power saving mode cannot increase above 25',function(){
       thermostat._increaseTemperature(26);
       expect(thermostat.temperature).toBeLessThan(26);
     });
@@ -55,6 +53,7 @@ describe('Thermostat', function(){
   });
 
   describe('it has saving power on/off button',function(){
+    
     it('can switch saving mode to off',function(){
       expect(thermostat.savingMode).toBe(true);
       thermostat.changeSaveMode();
@@ -71,13 +70,13 @@ describe('Thermostat', function(){
 
   describe('it has a reset button', function(){
 
-    it('it should change temperature to 20', function(){
+    it('that should change temperature to 20', function(){
       thermostat._increaseTemperature(10);
       thermostat.reset();
       expect(thermostat.temperature).toEqual(20);
     });
 
-    it('it should change to power save mode', function(){
+    it('that should change to power save mode', function(){
       thermostat.changeSaveMode();
       thermostat.reset();
       expect(thermostat.savingMode).toBe(true);
@@ -102,6 +101,7 @@ describe('Thermostat', function(){
   });
 
   describe('two buttons logic for thermostat',function(){
+    
     it('can increase in steps',function(){
       thermostat.up();
       expect(thermostat.temperature).toEqual(22);
@@ -111,6 +111,5 @@ describe('Thermostat', function(){
       thermostat.down();
       expect(thermostat.temperature).toEqual(18);
     });
-
   });
 });
