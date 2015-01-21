@@ -89,20 +89,20 @@ describe('Thermostat', function(){
     });
   });
 
-  describe('it can provide us with color',function(){
+  describe('it can provide us with a level of usage',function(){
 
-    it('should be yellow when it starts',function(){
-      expect(thermostat.consoleColor()).toEqual("yellow");
+    it('should be medium usage when it starts',function(){
+      expect(thermostat.consoleColor()).toEqual("mediumUsage");
     });
 
-    it('should be green when temperature is below 18', function(){
+    it('should be low usage when temperature is below 18', function(){
       thermostat._decreaseTemperature(5);
-      expect(thermostat.consoleColor()).toEqual("green");
+      expect(thermostat.consoleColor()).toEqual("lowUsage");
     });
 
-    it('should be red when temperature is above 25', function(){
+    it('should be high usage when temperature is above 25', function(){
       thermostat._increaseTemperature(10);
-      expect(thermostat.consoleColor()).toEqual("red");
+      expect(thermostat.consoleColor()).toEqual("highUsage");
     });
   });
 
@@ -110,12 +110,12 @@ describe('Thermostat', function(){
     
     it('can increase in steps',function(){
       thermostat.up();
-      expect(thermostat.temperature).toEqual(22);
+      expect(thermostat.temperature).toEqual(21);
     });
 
     it('can decrease in steps',function(){
       thermostat.down();
-      expect(thermostat.temperature).toEqual(18);
+      expect(thermostat.temperature).toEqual(19);
     });
   });
 });

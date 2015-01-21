@@ -5,6 +5,8 @@ var Thermostat = function(){
   this.minTemp = 10;
   this.powerSaveMax = 25;
   this.regularMax = 32;
+  this.lowUsage = 18;
+  this.mediumUsage = 25;
 
 };
 
@@ -30,11 +32,10 @@ Thermostat.prototype.changeSaveMode = function(){
 };
 
 Thermostat.prototype.consoleColor = function() {
-  var greenTrigger = 18;
-  var yellowTrigger = 25;
-  if (this.temperature < greenTrigger) return 'green';
-  if (this.temperature < yellowTrigger) return 'yellow';
-  return 'red';
+  
+  if (this.temperature < this.lowUsage) return 'lowUsage';
+  if (this.temperature < this.mediumUsage) return 'mediumUsage';
+  return 'highUsage';
 };
 
 Thermostat.prototype._increaseTemperature = function(changeTempBy) {

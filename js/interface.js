@@ -4,16 +4,15 @@ var thermostat = new Thermostat();
 
 var updateTemperature = function(){
   $('#temperature').text(thermostat.temperature);
- if (thermostat.savingMode){
-     $('.PWS-mode').css('background','green').text("ON");
- }else
- {
-     $('.PWS-mode').css('background','red').text("OFF");
- } 
+     if (thermostat.savingMode){
+         $('.PWS-mode').css('background','green').text("POWER SAVE ON");
+     }else
+     {
+         $('.PWS-mode').css('background','red').text("POWER SAVE OFF");
+     } 
 };
 
 $(document).ready(function(){
-  $('#temperature').text(thermostat.temperature);
   updateTemperature();
 
   $('.increase-temp').on('click', function(){
@@ -34,12 +33,6 @@ $(document).ready(function(){
   $('.PWS-mode').on('click',function(){
     thermostat.changeSaveMode();
     updateTemperature();
-    // if (thermostat.savingMode){
-    //     $('.PWS-mode').css('background','green');
-    // }else
-    // {
-    //     $('.PWS-mode').css('background','red');
-    // }
   });
 
 });
