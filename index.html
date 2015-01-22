@@ -5,23 +5,26 @@
     <meta charset='utf8'>
     <link rel='stylesheet' src="text/css" href="css/thermo-style.css">
   </head>
+  <span id='controlpanel'>
   <body>
-   <span id='controlpanel'>
-    <h1 class='mediumUsage' id='temperature'>??</h1>
+
     <main>
+     <h1 class='mediumUsage' id='temperature'>??</h1>
      <span id='controls'>
       <button class='increase-temp'>+</button>
       <button class='decrease-temp'>-</button>
-      <button class='reset'>♘RESET♘</button>
+      <button class='reset'>reset</button>
      </span> 
       <br>
-      <p>power saving mode</p>
+      <h2 class="mediumUsage" id="power-text"><span id="ptext">power saving mode</span></h2>
       <br>
       <button class='PWS-mode'>POWER SAVE</button>      
-      </main>
-   </span>   
+      </main>   
       <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script> 
       <script src="js/thermostat.js"></script>
       <script src="js/interface.js"></script>    
+     
   </body>
+   </span> 
+   <div class="image"></div>
 </html>

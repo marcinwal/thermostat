@@ -14,6 +14,7 @@ var updateTemperature = function(){
   
 $('#temperature').text(thermostat.temperature);
 $('#temperature').attr('class',thermostat.consoleColor());
+$('#power-text').attr('class',thermostat.consoleColor());
 
 };
 
