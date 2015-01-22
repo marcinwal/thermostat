@@ -10,14 +10,13 @@ h1 {
   font-size: 20vw;
 }
 
-h1.lowUsage {
+h1.lowUsage{
   color: #7FFF00;
 }
 
-h1.mediumUsage {
+h1.mediumUsage{
   color: yellow;
 }
-
 h1.highUsage {
   color: #B22222;
 }
