@@ -5,31 +5,19 @@ var tempColor;
 
 var updateTemperature = function(){
 
-  switch(thermostat.consoleColor()){
-    case 'lowUsage' : tempColor = "#32CD32";break;
-    case 'mediumUsage' : tempColor = "#FFD700";break;
-    case 'highUsage' :tempColor = "red";break;
-  }
+switch(thermostat.consoleColor()){
+  case 'lowUsage' : tempColor = "#808000";break;
+  case 'mediumUsage' : tempColor = "#FFD700";break;
+  case 'highUsage' :tempColor = "red";break;
+}
   
-  $('#temperature').css('color',tempColor).text(thermostat.temperature);
+$('#temperature').css('color',tempColor).text(thermostat.temperature);
     if (thermostat.savingMode){
-      $('#buttonThree').attr('checked', true)
-    }
-
-  // if (thermostat.savingMode){
-  //     $('.PWS-mode').css('background','green').text("POWER SAVE IS ON");
-  // }else
-  // {
-  //     $('.PWS-mode').css('background','red').text("POWER SAVE IS OFF");
-  // }
-
-
+      $('#buttonThree').attr('checked', true)}
 };
 
 $(document).ready(function(){
   updateTemperature();
-
-
 
   $('.increase-temp').on('click', function(){
       thermostat.up();
@@ -50,7 +38,6 @@ $(document).ready(function(){
     thermostat.changeSaveMode();
     updateTemperature();
   });
-
 });
 
 
