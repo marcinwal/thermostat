@@ -15,6 +15,13 @@ var updateTemperature = function(){
 $('#temperature').text(thermostat.temperature);
 $('#temperature').attr('class',thermostat.consoleColor());
 $('#power-text').attr('class',thermostat.consoleColor());
+if (thermostat.savingMode)
+{
+  $('.PWS-mode').text('power mode: on');
+}else
+{
+  $('.PWS-mode').text('power mode: off');
+}
 
 };
 
