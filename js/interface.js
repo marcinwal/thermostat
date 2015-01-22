@@ -6,17 +6,17 @@ var tempColor;
 var updateTemperature = function(){
 
   switch(thermostat.consoleColor()){
-    case 'lowUsage' : tempColor = "green";break;
-    case 'mediumUsage' : tempColor = "yellow";break;
+    case 'lowUsage' : tempColor = "#32CD32";break;
+    case 'mediumUsage' : tempColor = "#FFD700";break;
     case 'highUsage' :tempColor = "red";break;
   }
   
   $('#temperature').css('color',tempColor).text(thermostat.temperature);
   if (thermostat.savingMode){
-      $('.PWS-mode').css('background','green').text("POWER SAVE ON");
+      $('.PWS-mode').css('background','green').text("POWER SAVE IS ON");
   }else
   {
-      $('.PWS-mode').css('background','red').text("POWER SAVE OFF");
+      $('.PWS-mode').css('background','red').text("POWER SAVE IS OFF");
   }
 
 
