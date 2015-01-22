@@ -12,18 +12,24 @@ var updateTemperature = function(){
   }
   
   $('#temperature').css('color',tempColor).text(thermostat.temperature);
-  if (thermostat.savingMode){
-      $('.PWS-mode').css('background','green').text("POWER SAVE IS ON");
-  }else
-  {
-      $('.PWS-mode').css('background','red').text("POWER SAVE IS OFF");
-  }
+    if (thermostat.savingMode){
+      $('#buttonThree').attr('checked', true)
+    }
+
+  // if (thermostat.savingMode){
+  //     $('.PWS-mode').css('background','green').text("POWER SAVE IS ON");
+  // }else
+  // {
+  //     $('.PWS-mode').css('background','red').text("POWER SAVE IS OFF");
+  // }
 
 
 };
 
 $(document).ready(function(){
   updateTemperature();
+
+
 
   $('.increase-temp').on('click', function(){
       thermostat.up();
@@ -40,7 +46,7 @@ $(document).ready(function(){
     updateTemperature();
   });
 
-  $('.PWS-mode').on('click',function(){
+  $('#buttonThree').on('click',function(){
     thermostat.changeSaveMode();
     updateTemperature();
   });
