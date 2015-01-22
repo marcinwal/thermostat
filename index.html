@@ -3,36 +3,25 @@
   <head>
     <title></title>
     <meta charset='utf8'>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel='stylesheet' src="text/css" href="css/thermo-style.css">
   </head>
   <body>
-    <h1>
-      <span id="Content">
-      <span id='temperature'>??</span>
-      </h1>
-    <h2 class='degree'> </h2>
+   <span id='controlpanel'>
+    <h1 class='mediumUsage' id='temperature'>??</h1>
     <main>
+     <span id='controls'>
       <button class='increase-temp'>+</button>
       <button class='decrease-temp'>-</button>
       <button class='reset'>♘RESET♘</button>
+     </span> 
       <br>
-
-
-      <!-- <button class='PWS-mode'>POWER SAVE</button> -->
-
-        <div class="PWS-mode">
-        <input type="checkbox" id="buttonThree" />
-        <label for="buttonThree"> 
-        <!-- class="attention" -->
-        <i></i>
-        </label>
-        </div>
-
-      </span>
+      <p>power saving mode</p>
+      <br>
+      <button class='PWS-mode'>POWER SAVE</button>      
       </main>
+   </span>   
       <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script> 
       <script src="js/thermostat.js"></script>
-      <script src="js/interface.js"></script> 
+      <script src="js/interface.js"></script>    
   </body>
 </html>
