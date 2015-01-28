@@ -1,4 +1,4 @@
-console.log("Hi Demkiw!");
+console.log("Hi Demkiw and Marcin ");
 
 var thermostat = new Thermostat();
 var tempColor;
